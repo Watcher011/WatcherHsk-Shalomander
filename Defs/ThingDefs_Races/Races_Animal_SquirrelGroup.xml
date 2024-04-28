@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!-- ============================================================ -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>shalomander</defName>
+    <label>Шаломандер</label>
+    <devNote>squirrel-1</devNote>
+    <description>Вид ящериц, что постоянно говорят Шалом, крайне странные так как они вооружены боевыми венчиками, у них так же наблюдается тяга к кулинарии и поварским колпакам. Наука не в силах объяснить откуда они берут колпаки, но было обнаружено, что на каждом есть бирка "Таверна Симпая", Учёным так и не удалось найти Таверну с таким названием.</description>
+	<tickerType>Normal</tickerType>
+    <statBases>
+      <MoveSpeed>5.0</MoveSpeed>
+      <MarketValue>100</MarketValue>
+      <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.95</ToxicEnvironmentResistance>
+	  <FilthRate>0</FilthRate>
+    </statBases>
+    <tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>Удар Поварёшкой</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.9</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>21</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+				<armorPenetrationSharp>5</armorPenetrationSharp>
+				<armorPenetrationBlunt>15</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>Удар венчиком</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.9</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>21</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+				<armorPenetrationSharp>5</armorPenetrationSharp>
+				<armorPenetrationBlunt>15</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>3</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<armorPenetrationBlunt>12</armorPenetrationBlunt>
+			</li>
+		</tools>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>EggIguanaFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>5.661</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1~2</eggCountRange>
+      </li>
+    </comps>
+    <race>
+      <body>QuadrupedAnimalWithClawsTailAndJowl</body>
+      <baseBodySize>0.4</baseBodySize>
+      <baseHealthScale>0.5</baseHealthScale>
+      <baseHungerRate>0.2</baseHungerRate>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <leatherDef>Leather_Lizard</leatherDef>
+      <wildness>0.1</wildness>
+      <trainability>Advanced</trainability>
+      <petness>0.9</petness>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Iguana_Wounded</soundWounded>
+          <soundDeath>Pawn_Iguana_Death</soundDeath>
+          <soundCall>Pawn_Iguana_Call</soundCall>
+          <soundAngry>Pawn_Iguana_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+	  
+	  <trainableTags>
+        <li>Work</li>
+	    <li>Help</li>
+      </trainableTags>
+      <untrainableTags>
+        <li>Combat</li>
+        <li>Basic</li>
+      </untrainableTags>
+	  
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <headPosPerRotation>
+        <li>(-0.01, 0, 0.3)</li>
+        <li>(0.35, 0, 0.05)</li>
+        <li>(0.0, 0, -0.24)</li>
+        <li>(-0.35, 0, 0.05)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>shalomander</defName>
+    <label>Шаломандер</label>
+    <race>shalomander</race>
+    <combatPower>40</combatPower>
+    <ecoSystemWeight>0.30</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ExtendedGraphic/Animal/shalomander/shalomander</texPath>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iguana/Dessicated_Iguana</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ExtendedGraphic/Animal/shalomander/shalomander</texPath>
+          <drawSize>1.25</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/ExtendedGraphic/Animal/shalomander/shalomander</texPath>
+          <drawSize>1.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ExtendedGraphic/Animal/shalomander/shalomander</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iguana/Dessicated_Iguana</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>
